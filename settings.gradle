@@ -1,0 +1,13 @@
+include ':app'
+
+include ':c-framework'
+include ':c-annotations'
+include ':c-processor'
+include ':c-router'
+include ':c-function-tool'
+
+include ':b-common'
+include ':b-login'
+include ':b-setting'
+include ':b-main'
+

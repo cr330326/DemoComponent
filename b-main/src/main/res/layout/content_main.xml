@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/scrollContent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+	android:orientation="vertical">
+
+	<Button
+		android:id="@+id/login_btn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:background="#00000000"
+		android:text="登陆"
+		android:textAllCaps="false"
+		android:textColor="#319dff"
+		android:textSize="15sp" />
+
+	<Button
+		android:id="@+id/setting_btn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:background="#00000000"
+		android:text="设置"
+		android:textAllCaps="false"
+		android:textColor="#319dff"
+		android:textSize="15sp" />
+</LinearLayout>

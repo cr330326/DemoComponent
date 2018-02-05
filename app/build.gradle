@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.cryallen.demo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+
+        if (!isModule.toBoolean()) {
+            //ARouter
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [ moduleName : project.getName() ]
+                }
+            }
+        }
+    }
+
+    signingConfigs{
+        release{}
+        debug {}
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                //这里修改apk的文件名
+                def fileName = "test_V${defaultConfig.versionName}_Build${releaseTime() }.apk"
+                outputFileName = new File(fileName)
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation project(':b-common')
+    if (!isModule.toBoolean()) {
+        implementation project(':b-main')
+        implementation project(':b-login')
+        implementation project(':b-setting')
+    }
+    else{
+        annotationProcessor "com.alibaba:arouter-compiler:${rootProject.annotationProcessor}"
+    }
+}
+
+
+
+

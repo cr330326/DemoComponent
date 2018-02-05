@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.google.code.gson:gson:${rootProject.gsonVersion}"
+    implementation project(':c-annotations')
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

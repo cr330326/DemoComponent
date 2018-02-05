@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        if (isModule.toBoolean()) {
+            versionCode 1
+            versionName "1.0"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            jniDebuggable false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+}
+
+dependencies {
+    // 本地加载
+    api project(':c-framework')
+    api project(':c-router')
+    api project(':c-function-tool')
+
+    // Android Support
+    api "com.android.support:appcompat-v7:${rootProject.supportLibraryVersion}"
+    api "com.android.support:design:${rootProject.supportLibraryVersion}"
+    api "com.android.support:recyclerview-v7:${rootProject.supportLibraryVersion}"
+    api "com.android.support.constraint:constraint-layout:${rootProject.constraintVersion}"
+
+    // RxJava
+    api "io.reactivex.rxjava2:rxjava:${rootProject.rxjavaVersion}"
+    api "io.reactivex.rxjava2:rxandroid:${rootProject.rxandroidVersion}"
+
+    // OkHttp
+    api "com.squareup.okhttp3:okhttp:${rootProject.okhttpVersion}"
+    api "com.squareup.okhttp3:logging-interceptor:${rootProject.okhttploggingVersion}"
+
+    // Retrofit
+    api "com.squareup.retrofit2:retrofit:${rootProject.retrofitVersion}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${rootProject.retrofitVersion}"
+    api "com.squareup.retrofit2:converter-scalars:${rootProject.retrofitVersion}"
+    api "com.squareup.retrofit2:converter-gson:${rootProject.retrofitVersion}"
+    api ("com.squareup.retrofit2:converter-simplexml:${rootProject.retrofitVersion}"){
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+
+    // 第三方库
+    api "org.xutils:xutils:${rootProject.xutilsVersion}"
+    api "com.github.bumptech.glide:glide:${rootProject.glideVersion}"
+    api "me.yokeyword:fragmentation-core:${rootProject.fragmentationVersion}"
+    api "com.orhanobut:logger:${rootProject.loggerVersion}"
+    api "com.google.code.gson:gson:${rootProject.gsonVersion}"
+}

@@ -1,0 +1,78 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="text_size_20">20.0dip</dimen>
+    <dimen name="text_size_18">18.0dip</dimen>
+    <dimen name="text_size_16">16.0dip</dimen>
+    <dimen name="text_size_15">15.0dip</dimen>
+    <dimen name="text_size_14">14.0dip</dimen>
+    <dimen name="text_size_13">13.0dip</dimen>
+    <dimen name="text_size_12">12.0dip</dimen>
+    <dimen name="text_size_11">11.0dip</dimen>
+    <dimen name="text_size_10">10.0dip</dimen>
+    <dimen name="space_100">100.0dip</dimen>
+    <dimen name="space_49">49dip</dimen>
+    <dimen name="space_35">35.0dip</dimen>
+    <dimen name="space_16">16.0dip</dimen>
+    <dimen name="space_15">15.0dip</dimen>
+    <dimen name="space_14">14.0dip</dimen>
+    <dimen name="space_13">13.0dip</dimen>
+    <dimen name="space_12">12.0dip</dimen>
+    <dimen name="space_10">10.0dip</dimen>
+    <dimen name="space_8">8.0dip</dimen>
+    <dimen name="space_6">6.0dip</dimen>
+    <dimen name="space_5">5.0dip</dimen>
+    <dimen name="space_4">4.0dip</dimen>
+    <dimen name="space_3">3.0dip</dimen>
+    <dimen name="space_2">2.0dip</dimen>
+
+    <dimen name="global_padding">10.0dip</dimen>
+    <dimen name="global_dialog_padding">15.0dip</dimen>
+    <dimen name="text_regular_primary_size">14.0dip</dimen>
+    <dimen name="text_large_secondary_size">12.0dip</dimen>
+    <dimen name="text_large_primary_size">16.0dip</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="set_item_text_size_16">16sp</dimen>
+    <dimen name="set_item_text_margin_left">16dp</dimen>
+    <dimen name="set_item_icon_margin_left">20dp</dimen>
+    <dimen name="set_text_size_18">18sp</dimen>
+    <dimen name="title_height_48dp">48dp</dimen>
+    <dimen name="set_title_txt_size_20">20sp</dimen>
+
+    <!-- 自定义Dialog属性 -->
+    <dimen name="pwd_not_same_dialog_width">250dp</dimen>
+    <dimen name="pwd_not_same_dialog_height">150dp</dimen>
+    <dimen name="pwd_not_same_confirm_txt_size">25sp</dimen>
+    <dimen name="pwd_not_same_txt_size">18sp</dimen>
+
+    <dimen name="dialog_padding">10dp</dimen>
+    <dimen name="dialog_margin">10dip</dimen>
+    <dimen name="dialog_net_width">300dp</dimen>
+    <dimen name="dialog_net_height">150dp</dimen>
+
+    <!-- 更新对话框属性-->
+    <dimen name="update_dialog_title_txt_size">20sp</dimen>
+    <dimen name="update_dialog_btn_height">53dp</dimen>
+    <dimen name="update_dialog_content_height">150dp</dimen>
+    <dimen name="update_dialog_content_margin_left">20dp</dimen>
+    <dimen name="update_dialog_content_size">20sp</dimen>
+    <dimen name="update_dialog_line_margin_left">10dp</dimen>
+
+    <dimen name="account_pwd_submit_btn_to_top">30dp</dimen>
+    <dimen name="account_pwd_submit_btn_height">48dp</dimen>
+    <dimen name="account_pwd_submit_btn_txt_size">22sp</dimen>
+    <dimen name="account_time_tip_btn_width">130dp</dimen>
+    <dimen name="account_get_code_btn_width">100dp</dimen>
+
+    <dimen name="account_pwd_level_tip_txt_width">80dp</dimen>
+    <dimen name="account_pwd_level_tip_txt_size_18">18sp</dimen>
+    <dimen name="account_pwd_change_success_toast_width">200dp</dimen>
+    <dimen name="account_pwd_change_success_toast_height">130dp</dimen>
+    <dimen name="account_pwd_change_success_toast_txt_size">14sp</dimen>
+
+    <!--下拉刷新列表组件-->
+    <dimen name="item_section_layout_height">30dp</dimen>
+    <dimen name="item_list_title_height">48dp</dimen>
+    <dimen name="item_right_delete_width">74dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/scrollContent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#00000000"
+		android:gravity="center"
+		android:text="设置主页面"
+		android:textAllCaps="false"
+		android:textColor="#319dff"
+		android:textSize="20sp" />
+</LinearLayout>

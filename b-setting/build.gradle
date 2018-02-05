@@ -1,0 +1,59 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        if (isModule.toBoolean()) {
+            applicationId "com.cryallen.setting"
+            versionCode 1
+            versionName "1.0"
+        } else {
+            //ARouter
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [ moduleName : project.getName() ]
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //集成开发模式下排除debug文件夹中的所有Java文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':b-common')
+    if (!isModule.toBoolean()) {
+        annotationProcessor "com.alibaba:arouter-compiler:${rootProject.annotationProcessor}"
+    }
+    annotationProcessor project(':c-processor')
+    implementation project(':c-annotations')
+}
